@@ -27,10 +27,13 @@ Route::group(['prefix' => 'auth', 'middleware' => 'api'], function ($router) {
     Route::post('logout', 'APIAuth\AuthController@logout');
     Route::post('password/forget', 'APIAuth\ForgotController@sendResetLinkEmail');
     Route::post('password/reset', 'APIAuth\ResetController@reset');
-    Route::post('refresh', 'APIAuth\AuthController@refresh');
-    Route::post('me', 'APIAuth\AuthController@me');
     Route::post('resend', 'APIAuth\VerificationController@resend');
     Route::post('verify', 'APIAuth\VerificationController@verify');
+        
 });
-// Route::group(['prefix' => 'auth', 'middleware' => 'api'], function ($router) {
-// });
+Route::group(['prefix' => 'auth', 'middleware' => 'api'], function () {
+    Route::group(['middleware' => 'emailverified'], function () {
+        Route::post('refresh', 'APIAuth\AuthController@refresh');
+        Route::post('me', 'APIAuth\AuthController@me');
+    });
+});

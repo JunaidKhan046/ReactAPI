@@ -20,5 +20,6 @@ return [
     'registerSuccess' => 'Register Successfully.',
     'verified' => 'email already verified.',
     'verify'=> 'Your email verification link has been successfully sent.',
-    'verifySuccess' => 'Email verify successfully.'
+    'verifySuccess' => 'Email verify successfully.',
+    'verifyFail' => 'Your email address is not verified.'
 ];

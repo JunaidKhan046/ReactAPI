@@ -118,6 +118,13 @@ class AuthController extends Controller
      * @response 401 { 
      *    "message": "Unauthenticated."
      *}
+     * @response 403 { 
+     *  "data": {
+     *   "statusCode": "403",
+     *   "status": "Forbidden",
+     *   "message": "Your email address is not verified."
+     *   }
+     * }
      * @return \Illuminate\Http\JsonResponse
      */
     public function me()
@@ -185,6 +192,13 @@ class AuthController extends Controller
      * @response 401 { 
      *    "message": "Unauthenticated."
      *}
+     * @response 403 { 
+     *  "data": {
+     *   "statusCode": "403",
+     *   "status": "Forbidden",
+     *   "message": "Your email address is not verified."
+     *   }
+     * }
      * @return \Illuminate\Http\JsonResponse
      */
     public function refresh()
