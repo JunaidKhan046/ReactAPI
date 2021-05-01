@@ -91,7 +91,7 @@ class AuthController extends Controller
                 ]], __('statusCode.statusCode401'));
             }
             return $this->respondWithToken($token);
-        } catch(Exception $e) {
+        } catch(\Exception $e) {
             return response()->json(['data' => [
                 'statusCode' => __('statusCode.statusCode500'),
                 'status' => __('statusCode.status500'),

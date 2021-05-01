@@ -87,7 +87,7 @@ class RegisterController extends Controller
                 ]], __('statusCode.statusCode401'));
             }
             return $this->respondWithToken($token);
-        } catch(Exception $e) {
+        } catch(\Exception $e) {
             DB::rollback();
             return response()->json(['data' => [
                 'statusCode' => __('statusCode.statusCode500'),
